@@ -21,6 +21,7 @@ headers = {'Content-Type': 'application/json'}
 
 def bulk_geocode_by_postcode(df):
     # bring in the column with postcodes from the Input dataset
+    # "station_postcode" is the name of the field in my data set that holds postcodes
 
     postcodes = df["station_postcode"].tolist()
     
