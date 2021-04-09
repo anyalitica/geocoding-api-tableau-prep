@@ -1,4 +1,4 @@
-#import the libraries needed to access the API (requests), 
+# import the libraries needed to access the API (requests), 
 # work with JSON files (json), and Pandas data frames (pandas)
 
 import requests
@@ -29,19 +29,19 @@ def bulk_geocode_by_postcode(df):
     print(postcodes)
     print('=-'*40)
 
-    # build request body, add array of postcodes
+    # build the request's body from the list of postcodes
     body = json.dumps({"postcodes": postcodes})
 
     print('Request with the list of postcodes:')
     print(body)
     print('=-'*40)
 
-    # make an API call using endpoint URL for postcodes lookup. 
-    # Provides headers and request body
+    # make an API call using the endpoint URL for postcodes lookup. 
+    # Provide headers and request body
     
     response = requests.post(postcode_lookup_url,headers=headers, data=body)
     
-    # If successful request then parse response and extract longitude and latitude each postcode from response
+    # If the request is successful, parse it and extract longitude and latitude for each postcode from response
     # else return None
 
     if response.status_code == 200:
